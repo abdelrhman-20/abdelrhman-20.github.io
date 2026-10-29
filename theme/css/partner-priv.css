@@ -1,0 +1,325 @@
+
+/* ============================================================
+   STORIES SLIDER
+   ============================================================ */
+.stories-slider-section { padding:60px 0; background-color:#000; color:#fff; overflow:hidden; }
+@media (max-width:768px){ .stories-slider-section{ padding:40px 0; } }
+
+/* ============================================================
+   VIDEOS SECTION
+   ============================================================ */
+.videos-section { padding:60px 0; background-color:#000; }
+.videos-grid    { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; align-items:flex-start; }
+
+.videos-section .pos-slider {
+    height: 70vh;
+    max-height: 620px;
+    min-height: 380px;
+}
+@media (max-width:768px){
+    .videos-section .pos-slider { height:62vh; min-height:340px; }
+}
+
+.video-item-embed {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #111;
+    flex-shrink: 0;
+}
+.video-item-embed iframe,
+.video-item-embed video { position:absolute; inset:0; width:100%; height:100%; border:0; object-fit:cover; }
+
+/* حجم عناصر الفيديو في وضع الـ grid العادي (3 فيديوهات أو أقل) */
+.videos-grid .video-item-embed {
+    width: min(339px, 86vw);
+    aspect-ratio: 9 / 16;
+}
+
+@media (max-width:768px){ .videos-section{ padding:20px 0; } .videos-grid{ gap:10px; } }
+
+/* ============================================================
+   POSITION SLIDER — shared infinite-scroll engine
+   (نفس لوجيك سلايدر الـ Stories، بيتطبق على الفيديوهات
+    وسلايدر الصور المزدوجة كمان)
+   ============================================================ */
+.pos-slider           { position:relative; overflow:hidden; direction:ltr; }
+.pos-slider__wrapper  { position:relative; width:100%; height:100%; }
+
+.pos-slider__item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(.82);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .45s cubic-bezier(.25,.46,.45,.94), opacity .45s ease, left .45s cubic-bezier(.25,.46,.45,.94);
+    pointer-events: none;
+}
+.pos-slider__item.active,
+.pos-slider__item.left,
+.pos-slider__item.right { visibility: visible; opacity: 1; pointer-events: auto; }
+
+.pos-slider__item.active { left:50%; transform:translate(-50%,-50%) scale(1);   z-index:3; }
+.pos-slider__item.left   { left:18%; transform:translate(-50%,-50%) scale(.82); z-index:2; opacity:.55; }
+.pos-slider__item.right  { left:82%; transform:translate(-50%,-50%) scale(.82); z-index:2; opacity:.55; }
+
+/* ---------- شكل فون: عمودي 9:16 ---------- */
+.pos-slider--phone .pos-slider__item {
+    width: min(260px, 72vw);
+    aspect-ratio: 9 / 16;
+    border-radius: 18px;
+    overflow: hidden;
+    background:#111;
+    box-shadow: 0 18px 50px rgba(0,0,0,.45);
+}
+.pos-slider--phone .pos-slider__item .video-item-embed {
+    width:100%; height:100%; border-radius:18px;
+}
+
+/* ---------- شكل أعمدة الصور المزدوجة: شبكة 4 أعمدة، بدون سلايدر إن كان العدد ≤ 4 ---------- */
+.double-grid-slider {
+    position: relative;
+    overflow: hidden;
+    direction: ltr;
+}
+.double-grid-slider__track {
+    display: flex;
+    transition: transform .4s cubic-bezier(.25,.46,.45,.94);
+    will-change: transform;
+}
+.double-grid-slider__item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    box-sizing: border-box;
+    padding: 0 6px;
+}
+.double-grid-slider__item .double-image-column { width: 100%; }
+
+/* لما العدد ≤ 4: مفيش سلايدر، عرض ثابت بدون حركة ولا تمرير */
+.double-grid-slider.is-static .double-grid-slider__track {
+    transform: none !important;
+}
+
+@media (max-width: 1100px) {
+    .double-grid-slider__item { flex-basis: 33.3333%; max-width: 33.3333%; }
+}
+@media (max-width: 600px) {
+    .double-grid-slider__item { flex-basis: 100%; max-width: 100%; }
+}
+
+/* ---------- أسهم ودوتس بنفس شكل سلايدر الستوريز ---------- */
+.pos-slider-nav {
+    position:absolute; top:50%; left:0; right:0;
+    display:flex; justify-content:space-between;
+    transform:translateY(-50%);
+    padding:0 6px;
+    z-index:10;
+    pointer-events:none;
+    direction:ltr;
+}
+.pos-slider-nav button { pointer-events:auto; background:none; border:none; cursor:pointer; padding:0; }
+.pos-slider-nav svg { width:50px; height:50px; }
+
+.pos-slider-dots {
+    display:flex; justify-content:center; gap:8px; margin-top:24px;
+}
+.pos-slider-dot {
+    width:8px; height:8px; border-radius:50%;
+    background:rgba(255,255,255,.35); border:none; cursor:pointer; padding:0;
+    transition:background .25s,transform .25s;
+}
+.pos-slider-dot.active { background:#9168ea; transform:scale(1.3); }
+
+@media (max-width:768px){
+    .pos-slider__item.left  { left:8%;  }
+    .pos-slider__item.right { left:92%; }
+    .pos-slider-nav svg { width:38px; height:38px; }
+}
+
+/* ============================================================
+   DOUBLE IMAGE SLIDER
+   ──────────────────────────────────────────────────────────
+   كل عمود: صورتان portrait 4:5 (نسبة الصورة الأصلية 2048×2560)
+   الصور تملأ الـ container بدون اقتصاص — object-fit: contain داخل
+   aspect-ratio ثابتة
+   ============================================================ */
+.double-image-slider-section  { padding:60px 0; background-color:#000; }
+
+/* العمود: column من صورتين */
+.double-image-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+/* كل صورة: portrait 4:5 — تظهر كاملة بدون crop */
+.double-image-column__img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 5;           /* نسبة الصورة الأصلية */
+    overflow: hidden;
+    border-radius: 10px;
+    background: #111;
+    position: relative;
+}
+
+.double-image-column__img-wrap img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;             /* يملأ بالكامل — الصور portrait فما فيش مشكلة */
+    object-position: center;
+    display: block;
+}
+
+@media (max-width:768px){ .double-image-slider-section{ padding:30px 0; } }
+
+/* ============================================================
+   FEATURED VIDEO
+   ============================================================ */
+.featured-video-section { padding:60px 0; background-color:#000; }
+.featured-video {
+    position:relative; width:100%; padding-bottom:56.25%; height:0;
+    overflow:hidden; border-radius:10px; background:#111;
+}
+.featured-video iframe,
+.featured-video video { position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+
+@media (max-width:768px){ .featured-video-section{ padding:40px 0; } }
+
+
+.partner-hero__logo img {
+    max-width: 410px;
+    max-height:119.08px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3)) contrast(0) brightness(4.5);
+}
+
+/* ============================================================
+   IMAGE GALLERY LIGHTBOX
+   ============================================================ */
+.pp-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483647;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.95);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+.pp-lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+.pp-lightbox__stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 80px;
+    box-sizing: border-box;
+}
+.pp-lightbox__img-wrap {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(.8);
+    opacity: 0;
+    transition: transform .35s cubic-bezier(.34,1.56,.64,1), opacity .3s ease;
+}
+.pp-lightbox.active .pp-lightbox__img-wrap {
+    transform: scale(1);
+    opacity: 1;
+}
+.pp-lightbox__img {
+    max-width: 100%;
+    max-height: calc(100vh - 140px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    -webkit-user-select: none;
+    user-select: none;
+}
+.pp-lightbox__close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.22);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s, transform .2s;
+}
+.pp-lightbox__close:hover { background: rgba(255,255,255,.22); transform: rotate(90deg); }
+.pp-lightbox__close svg { width: 18px; height: 18px; fill: #fff; }
+
+.pp-lightbox__counter {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,.75);
+    font-size: 14px;
+    letter-spacing: .03em;
+    font-variant-numeric: tabular-nums;
+}
+
+.pp-lightbox__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--color1,#9168ea);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s, opacity .2s;
+}
+.pp-lightbox__arrow:hover { background: #7a54d4; }
+.pp-lightbox__arrow svg { width: 22px; height: 22px; fill: #fff; }
+.pp-lightbox__arrow--prev { left: 18px; }
+.pp-lightbox__arrow--next { right: 18px; }
+.pp-lightbox__arrow--prev svg { transform: rotate(180deg); }
+.pp-lightbox__arrow[disabled] { opacity: .3; cursor: default; pointer-events: none; }
+
+@media (max-width:768px){
+    .pp-lightbox__stage { padding: 60px 16px; }
+    .pp-lightbox__arrow { width: 40px; height: 40px; }
+    .pp-lightbox__arrow--prev { left: 6px; }
+    .pp-lightbox__arrow--next { right: 6px; }
+    .pp-lightbox__close { top: 10px; right: 10px; }
+    .pp-lightbox__counter { top: 16px; }
+}
+
+/* مؤشر إن الصورة قابلة للفتح */
+.story-content,
+.double-image-column__img-wrap {
+    cursor: pointer;
+}

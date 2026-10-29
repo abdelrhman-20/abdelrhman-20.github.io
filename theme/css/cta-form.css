@@ -1,0 +1,379 @@
+#gform_wrapper_7[data-form-index="0"].gform-theme,[data-parent-form="7_0"]{--gf-color-primary: #204ce5;--gf-color-primary-rgb: 32, 76, 229;--gf-color-primary-contrast: #fff;--gf-color-primary-contrast-rgb: 255, 255, 255;--gf-color-primary-darker: #001AB3;--gf-color-primary-lighter: #527EFF;--gf-color-secondary: #fff;--gf-color-secondary-rgb: 255, 255, 255;--gf-color-secondary-contrast: #112337;--gf-color-secondary-contrast-rgb: 17, 35, 55;--gf-color-secondary-darker: #F5F5F5;--gf-color-secondary-lighter: #FFFFFF;--gf-color-out-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-out-ctrl-light-rgb: 17, 35, 55;--gf-color-out-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-out-ctrl-light-lighter: #F5F5F5;--gf-color-out-ctrl-dark: #585e6a;--gf-color-out-ctrl-dark-rgb: 88, 94, 106;--gf-color-out-ctrl-dark-darker: #112337;--gf-color-out-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-color-in-ctrl: #fff;--gf-color-in-ctrl-rgb: 255, 255, 255;--gf-color-in-ctrl-contrast: #112337;--gf-color-in-ctrl-contrast-rgb: 17, 35, 55;--gf-color-in-ctrl-darker: #F5F5F5;--gf-color-in-ctrl-lighter: #FFFFFF;--gf-color-in-ctrl-primary: #204ce5;--gf-color-in-ctrl-primary-rgb: 32, 76, 229;--gf-color-in-ctrl-primary-contrast: #fff;--gf-color-in-ctrl-primary-contrast-rgb: 255, 255, 255;--gf-color-in-ctrl-primary-darker: #001AB3;--gf-color-in-ctrl-primary-lighter: #527EFF;--gf-color-in-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-in-ctrl-light-rgb: 17, 35, 55;--gf-color-in-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-in-ctrl-light-lighter: #F5F5F5;--gf-color-in-ctrl-dark: #585e6a;--gf-color-in-ctrl-dark-rgb: 88, 94, 106;--gf-color-in-ctrl-dark-darker: #112337;--gf-color-in-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-radius: 3px;--gf-font-size-secondary: 14px;--gf-font-size-tertiary: 13px;--gf-icon-ctrl-number: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 0C4.26522 5.96046e-08 4.51957 0.105357 4.70711 0.292893L7.70711 3.29289C8.09763 3.68342 8.09763 4.31658 7.70711 4.70711C7.31658 5.09763 6.68342 5.09763 6.29289 4.70711L4 2.41421L1.70711 4.70711C1.31658 5.09763 0.683417 5.09763 0.292893 4.70711C-0.0976311 4.31658 -0.097631 3.68342 0.292893 3.29289L3.29289 0.292893C3.48043 0.105357 3.73478 0 4 0ZM0.292893 9.29289C0.683417 8.90237 1.31658 8.90237 1.70711 9.29289L4 11.5858L6.29289 9.29289C6.68342 8.90237 7.31658 8.90237 7.70711 9.29289C8.09763 9.68342 8.09763 10.3166 7.70711 10.7071L4.70711 13.7071C4.31658 14.0976 3.68342 14.0976 3.29289 13.7071L0.292893 10.7071C-0.0976311 10.3166 -0.0976311 9.68342 0.292893 9.29289Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-select: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 0.292893C0.683417 -0.097631 1.31658 -0.097631 1.70711 0.292893L5 3.58579L8.29289 0.292893C8.68342 -0.0976311 9.31658 -0.0976311 9.70711 0.292893C10.0976 0.683417 10.0976 1.31658 9.70711 1.70711L5.70711 5.70711C5.31658 6.09763 4.68342 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292893Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-search: url("data:image/svg+xml,%3Csvg width='640' height='640' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M256 128c-70.692 0-128 57.308-128 128 0 70.691 57.308 128 128 128 70.691 0 128-57.309 128-128 0-70.692-57.309-128-128-128zM64 256c0-106.039 85.961-192 192-192s192 85.961 192 192c0 41.466-13.146 79.863-35.498 111.248l154.125 154.125c12.496 12.496 12.496 32.758 0 45.254s-32.758 12.496-45.254 0L367.248 412.502C335.862 434.854 297.467 448 256 448c-106.039 0-192-85.962-192-192z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-label-space-y-secondary: var(--gf-label-space-y-md-secondary);--gf-ctrl-border-color: #686e77;--gf-ctrl-size: var(--gf-ctrl-size-md);--gf-ctrl-label-color-primary: #112337;--gf-ctrl-label-color-secondary: #112337;--gf-ctrl-choice-size: var(--gf-ctrl-choice-size-md);--gf-ctrl-checkbox-check-size: var(--gf-ctrl-checkbox-check-size-md);--gf-ctrl-radio-check-size: var(--gf-ctrl-radio-check-size-md);--gf-ctrl-btn-font-size: var(--gf-ctrl-btn-font-size-md);--gf-ctrl-btn-padding-x: var(--gf-ctrl-btn-padding-x-md);--gf-ctrl-btn-size: var(--gf-ctrl-btn-size-md);--gf-ctrl-btn-border-color-secondary: #686e77;--gf-ctrl-file-btn-bg-color-hover: #EBEBEB;--gf-field-img-choice-size: var(--gf-field-img-choice-size-md);--gf-field-img-choice-card-space: var(--gf-field-img-choice-card-space-md);--gf-field-img-choice-check-ind-size: var(--gf-field-img-choice-check-ind-size-md);--gf-field-img-choice-check-ind-icon-size: var(--gf-field-img-choice-check-ind-icon-size-md);--gf-field-pg-steps-number-color: rgba(17, 35, 55, 0.8);}
+
+/* ──────────────────────────────────────────────
+   CTA Form Block — scoped to #ctafrm037de5   ────────────────────────────────────────────── */
+.ctafrm037de5__section,
+.ctafrm037de5__section *,
+.ctafrm037de5__section *::before,
+.ctafrm037de5__section *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.ctafrm037de5__section {
+	font-family: inherit;
+	direction: rtl;
+	background: linear-gradient(50deg, #130d38 0%, #2b1a77 75%, #6e4fdc 100%);
+	padding: 64px 0;
+	overflow: hidden;
+}
+
+/* ── Two-column grid ── */
+.ctafrm037de5__container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 48px;
+	align-items: center;
+}
+
+/* ══════════════════ RIGHT: Content ══════════════════ */
+.ctafrm037de5__content {
+	color: #fff;
+}
+
+.ctafrm037de5__title {
+	font-size: clamp(1.7rem, 2.8vw, 2.9rem);
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.ctafrm037de5__description {
+    font-size: 1.6em;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 23px;
+}
+
+/* ── Features row ── */
+.ctafrm037de5__features {
+	display: flex;
+	gap: 12px;
+	justify-content: flex-start;
+}
+
+.ctafrm037de5__feature {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 8px;
+	flex: 1;
+	min-width: 0;
+}
+
+.ctafrm037de5__feature-icon {
+    width: 82px;
+    height: 82px;
+    color: #9168ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ctafrm037de5__feature-icon img,
+.ctafrm037de5__feature-icon svg {
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.ctafrm037de5__feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #9168ea;
+    line-height: 1.3;
+}
+
+.ctafrm037de5__feature-desc {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.55;
+}
+
+/* ══════════════════ LEFT: Form ══════════════════ */
+.ctafrm037de5__form {
+	background: rgba(255, 255, 255, 0.07);
+	border: 1.5px solid rgba(255, 255, 255, 0.18);
+	border-radius: 18px;
+	padding: 32px 28px;
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+}
+
+/* ══════════════════════════════════════════════════
+   Gravity Form overrides — scoped to landing page template
+   so these never bleed into forms on other pages.
+   ══════════════════════════════════════════════════ */
+
+/* Reset GF wrapper margins */
+.page-template-page-landing .ctafrm037de5__form .gform_wrapper,
+.page-template-page-landing .ctafrm037de5__form .gform_body {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.page-template-page-landing .ctafrm037de5__form .gform_wrapper h3.gform_title,
+.page-template-page-landing .ctafrm037de5__form .gform_wrapper .gform_description {
+	display: none !important;
+}
+
+/* ── 2-column grid for fields ──
+   Overrides GF 2.5's 12-column grid with a clean 2-column layout. */
+.page-template-page-landing .ctafrm037de5__form ul.gform_fields,
+.page-template-page-landing .ctafrm037de5__form .gform_fields {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	display: grid !important;
+	grid-template-columns: 1fr 1fr !important;
+	gap: 14px !important;
+}
+
+/* Every field resets its own margin/padding */
+.page-template-page-landing .ctafrm037de5__form ul.gform_fields li.gfield,
+.page-template-page-landing .ctafrm037de5__form .gform_fields .gfield {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/* GF 2.5+: override ALL GF column-span classes — every field defaults to 1 column
+   (half the row) in our 2-col grid, regardless of what is set in the GF builder. */
+.page-template-page-landing .ctafrm037de5__form .gfield--width-full,
+.page-template-page-landing .ctafrm037de5__form .gfield--width-half,
+.page-template-page-landing .ctafrm037de5__form .gfield--width-third,
+.page-template-page-landing .ctafrm037de5__form .gfield--width-two-thirds,
+.page-template-page-landing .ctafrm037de5__form .gfield--width-three-quarters,
+.page-template-page-landing .ctafrm037de5__form .gfield--width-one-quarter {
+	grid-column: span 1 !important;
+}
+
+@media screen and (max-width: 767.98px) {
+	.page-template-page-landing .ctafrm037de5__form {
+		width: 100% !important;	
+	}
+}
+
+/* Only specific field *types* get forced to full-width: textarea, file, html, hidden, consent */
+.page-template-page-landing .ctafrm037de5__form .gfield--type-textarea,
+.page-template-page-landing .ctafrm037de5__form .gfield--type-html,
+.page-template-page-landing .ctafrm037de5__form .gfield--type-hidden,
+.page-template-page-landing .ctafrm037de5__form .gfield--type-fileupload,
+.page-template-page-landing .ctafrm037de5__form .gfield--type-consent {
+	grid-column: 1 / -1 !important;
+}
+
+/* 5th field spans full width (odd one out in a 2-column layout of 5 fields) */
+.page-template-page-landing .ctafrm037de5__form .gform_fields .gfield:nth-child(6) {
+	grid-column: 1 / -1 !important;
+}
+
+/* Hide field labels — placeholders carry the label */
+.page-template-page-landing .ctafrm037de5__form .gfield_label {
+	display: none !important;
+}
+
+.page-template-page-landing .gform_wrapper .gform_fields .gfield .ginput_container {
+	padding: 0 !important;
+	border: none!important;
+	box-shadow: none!important;
+}
+
+
+.page-template-page-landing .gform_wrapper .gform_fields .gfield .ginput_container select {
+    height: unset !important;
+    padding-top: 13px !important;
+    padding-bottom: 13px !important;
+    padding-right: 17px !important;
+	color: #fff7!important;
+}
+
+/* ── Text / Email / Tel / Number / Select / Textarea ── */
+.page-template-page-landing .ctafrm037de5__form input[type="text"],
+.page-template-page-landing .ctafrm037de5__form input[type="email"],
+.page-template-page-landing .ctafrm037de5__form input[type="tel"],
+.page-template-page-landing .ctafrm037de5__form input[type="number"],
+.page-template-page-landing .ctafrm037de5__form select,
+.page-template-page-landing .ctafrm037de5__form textarea {
+	background: rgba(255, 255, 255, 0.08) !important;
+	border: 1.5px solid rgba(255, 255, 255, 0.32) !important;
+	border-radius: 10px !important;
+	color: #ffffff !important;
+	padding: 24px 17px !important;
+	font-family: inherit !important;
+	font-size: 1rem !important;
+	width: 100% !important;
+	outline: none !important;
+	transition: border-color 0.25s ease, background 0.25s ease !important;
+	direction: rtl !important;
+	box-sizing: border-box !important;
+}
+
+.page-template-page-landing .ctafrm037de5__form input[type="text"]:focus,
+.page-template-page-landing .ctafrm037de5__form input[type="email"]:focus,
+.page-template-page-landing .ctafrm037de5__form input[type="tel"]:focus,
+.page-template-page-landing .ctafrm037de5__form textarea:focus {
+	border-color: rgba(145, 104, 234, 0.85) !important;
+	background: rgba(255, 255, 255, 0.13) !important;
+}
+
+.page-template-page-landing .ctafrm037de5__form input::placeholder,
+.page-template-page-landing .ctafrm037de5__form textarea::placeholder {
+	color: rgba(255, 255, 255, 0.52) !important;
+}
+
+.page-template-page-landing .ctafrm037de5__form textarea {
+	min-height: 90px !important;
+	resize: none !important;
+}
+
+/* ── File upload input ── */
+.page-template-page-landing .ctafrm037de5__form input[type="file"] {
+	background: rgba(255, 255, 255, 0.06) !important;
+	border: 1.5px dashed rgba(255, 255, 255, 0.38) !important;
+	border-radius: 10px !important;
+	color: #c4b5fd !important;
+	padding: 12px 14px !important;
+	font-family: inherit !important;
+	font-size: 0.92rem !important;
+	width: 100% !important;
+	cursor: pointer !important;
+	direction: rtl !important;
+	box-sizing: border-box !important;
+	transition: border-color 0.25s ease, background 0.25s ease !important;
+}
+
+.page-template-page-landing .ctafrm037de5__form input[type="file"]:hover {
+	border-color: rgba(145, 104, 234, 0.7) !important;
+	background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Style the native "Choose file" button (modern browsers) */
+.page-template-page-landing .ctafrm037de5__form input[type="file"]::file-selector-button {
+	background: rgba(110, 79, 220, 0.55) !important;
+	color: #fff !important;
+	border: none !important;
+	border-radius: 6px !important;
+	padding: 6px 16px !important;
+	font-family: inherit !important;
+	font-size: 0.85rem !important;
+	font-weight: 600 !important;
+	cursor: pointer !important;
+	margin-left: 10px !important;
+	transition: background 0.2s ease !important;
+}
+
+.page-template-page-landing .ctafrm037de5__form input[type="file"]::file-selector-button:hover {
+	background: rgba(110, 79, 220, 0.85) !important;
+}
+
+/* ── Validation ── */
+.page-template-page-landing .ctafrm037de5__form .gfield_error input,
+.page-template-page-landing .ctafrm037de5__form .gfield_error textarea,
+.page-template-page-landing .ctafrm037de5__form .gfield_error input[type="file"] {
+	border-color: #f87171 !important;
+}
+
+.page-template-page-landing .ctafrm037de5__form .validation_message {
+	color: #f87171 !important;
+	font-size: 0.8rem !important;
+	margin-top: 4px !important;
+}
+
+/* ── Footer / Submit button ── */
+.page-template-page-landing .ctafrm037de5__form .gform_footer,
+.page-template-page-landing .ctafrm037de5__form .gform_page_footer {
+	margin: 0 !important;
+	padding: 16px 0 0 !important;
+}
+
+.page-template-page-landing .ctafrm037de5__form .gform_footer input[type="submit"],
+.page-template-page-landing .ctafrm037de5__form .gform_page_footer input[type="submit"],
+.page-template-page-landing .ctafrm037de5__form button[type="submit"] {
+	background: #6e4fdc !important;
+	color: #fff !important;
+	border: none !important;
+	border-radius: 10px !important;
+	padding: 15px 40px !important;
+	font-size: 1.1rem !important;
+	font-weight: 700 !important;
+	font-family: inherit !important;
+	cursor: pointer !important;
+	width: 100% !important;
+	transition: background 0.3s ease, transform 0.15s ease !important;
+	direction: rtl !important;
+	display: block !important;
+}
+
+.page-template-page-landing .ctafrm037de5__form .gform_footer input[type="submit"]:hover,
+.page-template-page-landing .ctafrm037de5__form button[type="submit"]:hover {
+	background: #5b3fc4 !important;
+	transform: translateY(-2px) !important;
+}
+
+/* ── Confirmation message ── */
+.page-template-page-landing .ctafrm037de5__form .gform_confirmation_wrapper {
+	color: #c4b5fd;
+	font-size: 1rem;
+	text-align: center;
+	padding: 20px 0;
+}
+
+/* ══════════════════ Responsive ══════════════════ */
+@media (max-width: 960px) {
+	.ctafrm037de5__container {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 36px;
+		padding: 0 24px;
+	}
+	/* Show form above content on narrower screens */
+	.ctafrm037de5__form {
+		order: -1;
+	}
+}
+
+@media (max-width: 600px) {
+	.ctafrm037de5__section {
+		padding: 44px 0;
+	}
+	.ctafrm037de5__container {
+		padding: 0 18px;
+	}
+	.ctafrm037de5__features {
+		flex-direction: row;
+		align-items: center;
+	}
+	.ctafrm037de5__feature {
+		flex: unset;
+		width: 100%;
+		max-width: 200px;
+	}
+	.ctafrm037de5__feature-icon {
+		width: 42px;
+ 	   height: 42px;
+	}
+
+	.ctafrm037de5__feature-title {
+		font-size: 1.1rem;
+	}
+
+	.ctafrm037de5__feature-desc {
+		font-size: .8rem;
+	}
+
+	.page-template-page-landing .ctafrm037de5__form ul.gform_fields,
+	.page-template-page-landing .ctafrm037de5__form .gform_fields {
+		grid-template-columns: 1fr !important;
+	}
+	.ctafrm037de5__form {
+		padding: 24px 18px;
+	}
+}

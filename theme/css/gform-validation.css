@@ -1,0 +1,105 @@
+
+/* ===== Wida Gravity Forms Validation Style ===== */
+
+/* حدود ولون مختلف للحقول غير الصحيحة بدلاً من اللون الأحمر الافتراضي */
+.gform_wrapper .gfield_error input:not([type=checkbox]):not([type=radio]),
+.gform_wrapper .gfield_error select,
+.gform_wrapper .gfield_error textarea {
+	border: 1px solid #ec4899 !important;
+	box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.15) !important;
+	background-color: rgba(236, 72, 153, 0.04) !important;
+}
+
+/* رسالة الخطأ تحت كل حقل */
+.gform_wrapper .gfield_error .gfield_description.validation_message,
+.gform_wrapper .validation_message {
+	color: #ec4899 !important;
+	font-size: 13px !important;
+	font-weight: 600;
+	margin-top: 6px !important;
+}
+
+/* صندوق تنبيه الأخطاء العلوي الذي يعرضه Gravity Forms أعلى النموذج */
+.gform_wrapper .gform_validation_errors,
+.gform_wrapper .validation_error {
+	background: linear-gradient(135deg, #2b0a4e 0%, #170824 100%) !important;
+	border: 1px solid #a855f7 !important;
+	color: #ffffff !important;
+	border-radius: 12px !important;
+	padding: 16px 20px !important;
+	font-weight: 600;
+}
+
+/* ===== Toast التنبيه العائم ===== */
+.wida-form-toast {
+	position: fixed;
+	bottom: 24px;
+	left: 50%;
+	transform: translateX(-50%) translateY(-120px);
+	opacity: 0;
+	z-index: 999999;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	max-width: 90%;
+	padding: 16px 22px;
+	border-radius: 14px;
+	background: linear-gradient(135deg, #2b0a4e 0%, #170824 100%);
+	border: 1px solid #a855f7;
+	box-shadow: 0 15px 45px rgba(168, 85, 247, 0.35);
+	color: #ffffff;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.6;
+	transition: transform .45s cubic-bezier(.16,1,.3,1), opacity .45s ease;
+	direction: rtl;
+	text-align: right;
+}
+
+.wida-form-toast.wida-toast-show {
+	transform: translateX(-50%) translateY(0);
+	opacity: 1;
+}
+
+.wida-form-toast .wida-toast-icon {
+	flex-shrink: 0;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #ec4899;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	color: #fff;
+}
+
+.wida-form-toast.wida-toast-success {
+	border-color: #22c55e;
+	box-shadow: 0 15px 45px rgba(34, 197, 94, 0.3);
+}
+
+.wida-form-toast.wida-toast-success .wida-toast-icon {
+	background: #22c55e;
+}
+
+.wida-form-toast .wida-toast-close {
+	cursor: pointer;
+	opacity: .6;
+	font-size: 18px;
+	margin-inline-start: 6px;
+	line-height: 1;
+}
+.wida-form-toast .wida-toast-close:hover {
+	opacity: 1;
+}
+
+@media (max-width: 600px) {
+	.wida-form-toast {
+		top: 14px;
+		width: 92%;
+		font-size: 14px;
+		padding: 14px 16px;
+	}
+}
+/*# sourceURL=wida-gform-validation-style-inline-css */

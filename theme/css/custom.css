@@ -1,0 +1,28 @@
+
+.cncfa665b-card-sub-row {
+    display: none !important;
+}
+@media screen and (min-width: 1024px) {
+    .gform_wrapper .gform_fields .gfield .gfield_label {
+
+        line-height: 1;
+    }
+}
+
+.header--trans header {
+    position: fixed;
+}
+
+header {
+   
+    background: #171231;
+  
+}
+
+.post-item.bg-fill .bg-fill__img.post-background {
+    background-size: cover;
+}
+#posts-slider .post-item {
+    height: 500px !important;
+ 
+}

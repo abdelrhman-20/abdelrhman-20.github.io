@@ -1,0 +1,623 @@
+/* ──────────────────────────────────────────────
+   Contact Us page — full page restyle
+   Scoped to body:is(.page-contact-us, .page-id-602) so it never affects
+   any other page or Gravity Form on the site.
+   ────────────────────────────────────────────── */
+
+/* ══════════════════ Hero: remove background image + floating social icons ══════════════════ */
+/* Real hero markup is the ACF "Hero" block (themes/vortex/blocks/block-hero.php),
+   rendered as <section class="hero ... hero--contact-us">, NOT the generic
+   .page-heading used elsewhere. Title/subtitle (.hero__title / .hero__subtitle)
+   are left completely untouched except for color, which must flip from white
+   to dark now that the dark background image is gone (otherwise the text
+   would be invisible on the new light background). */
+body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us {
+	background: #ffffff !important;
+}
+
+body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .bg-fill__img,
+body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .hero__overlay {
+	display: none !important;
+}
+
+body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .hero__social {
+	display: none !important;
+}
+/* Reduced from 40vh so the Hero wraps tightly around the title/subtitle
+   instead of reserving extra blank space, pulling the form closer to it.
+   min-height (not height) so the title/overline/subtitle block is never
+   clipped if it needs more room than 20vh on a given viewport — a fixed
+   height was cutting off the top of the text.
+   hero.less also sets height:80vh on .hero__tall at 1200px+ (no !important,
+   but a plain "height" still wins over our "min-height" since they aren't
+   the same property) — neutralized here so it doesn't force a huge box
+   on large screens. */
+body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .hero__tall {
+	height: auto !important;
+	min-height: 20vh !important;
+}
+body:is(.page-contact-us, .page-id-602) .hero.bg-fill.hero--right.theme--dark.hero--contact-us {
+	padding-top: 50px !important;
+}
+
+/* Breathing room above the title block so it isn't flush against the
+   top of the Hero / header. */
+body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .hero__content {
+	padding-top: 5em !important;
+}
+
+@media (max-width: 767px) {
+	body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .hero__content {
+		padding-top: 0em !important;
+	}
+}
+
+/* hero.less sets padding-bottom:10em (768–1199px) / 7em (1200px+) on
+   .hero .container — zeroed out on desktop for this page only. */
+@media (min-width: 768px) {
+	body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .container {
+		padding-bottom: 0 !important;
+		padding-top: 0 !important;
+	}
+}
+
+/* hero.less also sets padding-bottom:3rem on .hero--contact-us .container
+   at ≤599.98px — zeroed out for this page only. */
+@media (max-width: 599.98px) {
+	body:is(.page-contact-us, .page-id-602) .hero--contact-us .container,
+	body:is(.page-contact-us, .page-id-602) .hero--contact-us-confirmation .container {
+		padding-bottom: 0 !important;
+	}
+}
+ 
+body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .hero__title {
+	color: #16103b !important;
+}
+
+
+body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .hero__subtitle,
+body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .hero__subtitle * {
+	color: #807f7f !important;
+}
+
+@media (max-width: 767px) {
+	body:is(.page-contact-us, .page-id-602) .hero.hero--contact-us .hero__subtitle {
+		font-size: 1rem !important;
+	}
+}
+
+/* Override the site-wide max-width on .hero--contact-us/.hero--contact-us-confirmation
+   .hero__subtitle (hero.less) — scoped to this page only. */
+body:is(.page-contact-us, .page-id-602) .hero--contact-us .hero__subtitle,
+body:is(.page-contact-us, .page-id-602) .hero--contact-us-confirmation .hero__subtitle {
+	max-width: 28em !important;
+}
+
+/* .hero__content can get its own inline max-width from the ACF "hero_content_max"
+   field, which constrains the subtitle before its own max-width above applies.
+   Neutralized here, scoped to this page only. */
+body:is(.page-contact-us, .page-id-602) .hero--contact-us .hero__content,
+body:is(.page-contact-us, .page-id-602) .hero--contact-us-confirmation .hero__content {
+	max-width: none !important;
+}
+
+/* The .type wrapper (page.php) caps every <p> at max-width:760px on desktop
+   (typography.less), which was still capping the hero subtitle's inner <p>
+   regardless of the max-width set above — removed for this page only. */
+body:is(.page-contact-us, .page-id-602) .type p {
+	max-width: none !important;
+}
+
+/* Overrides the site-wide .theme--dark prose rule (typography.less), which
+   forces white text on p/blockquote/ul/ol/pre — scoped to this page only. */
+body:is(.page-contact-us, .page-id-602) .theme--dark p,
+body:is(.page-contact-us, .page-id-602) .theme--dark blockquote,
+body:is(.page-contact-us, .page-id-602) .theme--dark > ul,
+body:is(.page-contact-us, .page-id-602) .theme--dark > ol,
+body:is(.page-contact-us, .page-id-602) .theme--dark pre {
+	color: #807f7f !important
+}
+
+/* ══════════════════ Page max-width ══════════════════ */
+/* .container (shared by the Hero and the article/form) is fluid with no cap
+   site-wide — capped at 1400px for this page only, centered. */
+body:is(.page-contact-us, .page-id-602) .container {
+	max-width: 1100px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+/* ══════════════════ Single-column layout (hide sidebar) ══════════════════ */
+body:is(.page-contact-us, .page-id-602) .container--aside {
+	display: block !important;
+}
+
+body:is(.page-contact-us, .page-id-602) .container--aside aside {
+	display: none !important;
+}
+
+body:is(.page-contact-us, .page-id-602) .container--aside article {
+	width: 100% !important;
+}
+
+/* ══════════════════ Remove any purple background behind the form ══════════════════ */
+/* Covers whichever ancestor the page content happens to use (section/container
+   wrapper around the form) without needing to know its exact markup. */
+body:is(.page-contact-us, .page-id-602) main,
+body:is(.page-contact-us, .page-id-602) .container--aside,
+body:is(.page-contact-us, .page-id-602) .container--aside article,
+body:is(.page-contact-us, .page-id-602) .type,
+body:is(.page-contact-us, .page-id-602) .section--form,
+body:is(.page-contact-us, .page-id-602) .form-section-wrapper,
+body:is(.page-contact-us, .page-id-602) .container--form {
+	background: #ffffff !important;
+	background-image: none !important;
+}
+
+/* ══════════════════ Gravity Form #1 custom styling ══════════════════ */
+
+/* #gform_wrapper_1 (GF's outer wrapper div) is the ONE styled card.
+   #gform_1 (the <form> element it wraps) must stay unstyled — styling both
+   produced a card nested inside a card.
+   Width is 100% of its parent (not a hardcoded px value) so its left/right
+   edges land exactly on the same boundaries as the Hero's .container —
+   both the Hero and the article wrapping this form share that same class,
+   so matching its full width guarantees identical alignment without
+   needing to touch the Hero itself. */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 {
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	background: #ffffff;
+	border: 1px solid #ececf3;
+	border-radius: 20px;
+	box-shadow: 0 10px 40px rgba(20, 15, 60, 0.06);
+	padding: 56px;
+	box-sizing: border-box;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_1 {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	max-width: none !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_body {
+	margin: 0 !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 h3.gform_title,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_description {
+	display: none !important;
+}
+
+/* ── 2-column grid ── */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 ul.gform_fields,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_fields {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	display: grid !important;
+	grid-template-columns: 1fr 1fr !important;
+	column-gap: 24px !important;
+	row-gap: 22px !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 ul.gform_fields li.gfield,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_fields .gfield {
+	display: block !important;
+	width: auto !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	/* No !important here: the full-width rules below (type-based, ID-based,
+	   and the :has() fallback) rely on winning this via !important — this
+	   rule had a higher-specificity !important before, which always won the
+	   tie-break regardless of the "more specific" full-width selectors. */
+	grid-column: span 1;
+}
+
+/* Explicit field order to match the approved layout, regardless of the
+   form builder's field order (field IDs per WIDA_GF1_FIELD_* in functions.php):
+   Row 1: الاسم الكامل (5) | الجهة/الشركة (11)
+   Row 2: رقم الجوال (6) | البريد الإلكتروني (2)
+   Row 3: الخدمة المطلوبة (13) — full width
+   Row 4: تفاصيل المشروع (7) — full width
+   Row 5: إرفاق ملف — full width */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_5  { grid-column: 1; grid-row: 1; }
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_11 { grid-column: 2; grid-row: 1; }
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_6  { grid-column: 1; grid-row: 2; }
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_2  { grid-column: 2; grid-row: 2; }
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_13 { grid-column: 1 / -1; grid-row: 3; }
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_7  { grid-column: 1 / -1; grid-row: 4; }
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-fileupload { grid-column: 1 / -1; grid-row: 5; }
+
+/* Textarea / select / file / html / hidden / consent always take the full row */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-textarea,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-select,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-html,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-hidden,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-fileupload,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-consent,
+/* Defensive fallback in case GF's type-modifier classes differ from expected:
+   force full width by the field's actual control instead. */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield:has(select),
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield:has(textarea),
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield:has(input[type="file"]) {
+	grid-column: 1 / -1 !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-select .ginput_container,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-textarea .ginput_container,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-fileupload .ginput_container {
+	width: 100% !important;
+}
+
+/* ── Honeypot (Comments / "for validation purposes") field ──
+   GF ships this hidden by default via its own inline style, but the
+   `.gfield { display:block !important }` rule above was overriding that.
+   Hidden off-screen (not display:none) so GF's spam check keeps working. */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_validation_container {
+	position: absolute !important;
+	left: -9999px !important;
+	top: -9999px !important;
+	width: 1px !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+/* ── Labels — above the field, plain text ── */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield_label {
+	display: block !important;
+	width: auto !important;
+	background: transparent !important;
+	border: none !important;
+	color: #16103b !important;
+	/* Inherit the site's real font (set via the theme_body_font ACF option,
+	   see head.php) instead of a hardcoded 'Tajawal'/'Cairo' stack that was
+	   never actually loaded anywhere in the theme — the browser was
+	   silently falling back to a generic sans-serif with poor Arabic
+	   shaping, which read as oversized/disconnected/stretched. */
+	font-family: inherit !important;
+	font-size: 0.85rem !important;
+	font-weight: 500 !important;
+	line-height: 1.4 !important;
+	letter-spacing: normal !important;
+	word-spacing: normal !important;
+	text-align: right !important;
+	padding: 0 0 8px !important;
+	margin: 0 !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield_label.gfield_required::after {
+	content: "*" !important;
+	color: #e5484d !important;
+	font-weight: 700 !important;
+	margin-right: 4px !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield_required_text {
+	display: none !important;
+}
+
+/* ── Inputs ── */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .ginput_container {
+	width: 100% !important;
+	padding: 0 !important;
+	border: none !important;
+	box-shadow: none !important;
+	background: transparent !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input[type="text"],
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input[type="email"],
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input[type="tel"],
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input[type="number"],
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 select,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 textarea {
+	width: 100% !important;
+	background: #fcfcfe !important;
+	border: 1.5px solid #e4e3ee !important;
+	border-radius: 10px !important;
+	color: #16103b !important;
+	padding: 14px 16px !important;
+	font-family: inherit !important;
+	font-size: 0.9rem !important;
+	font-weight: 400 !important;
+	line-height: 1.5 !important;
+	letter-spacing: normal !important;
+	word-spacing: normal !important;
+	direction: rtl !important;
+	outline: none !important;
+	box-shadow: none !important;
+	transition: border-color 0.2s ease, background 0.2s ease !important;
+	box-sizing: border-box !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input[type="text"]:focus,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input[type="email"]:focus,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input[type="tel"]:focus,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 select:focus,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 textarea:focus {
+	border-color: #9168ea !important;
+	background: #ffffff !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input::placeholder,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 textarea::placeholder {
+	color: #a8a6ba !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input[type="tel"] {
+	direction: ltr !important;
+	text-align: right !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 textarea {
+	min-height: 120px !important;
+	resize: none !important;
+}
+
+/* ── Select dropdown arrow ── */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 select {
+	appearance: none !important;
+	cursor: pointer !important;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2316103b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+	background-repeat: no-repeat !important;
+	background-position: left 16px center !important;
+	padding-left: 40px !important;
+}
+
+/* ── File upload ──
+   Native ::file-selector-button text is OS/browser-controlled and can't be
+   set to Arabic via CSS, so the real input is visually hidden (kept in the
+   DOM, focusable, associated via a real <label for="..."> injected by JS —
+   see wireContactFields() in functions.php) and a custom-styled label acts
+   as the button. Clicking a label for a file input natively opens the file
+   picker with no JS needed for that part. */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .ginput_container_fileupload .gform_fileupload_rules {
+	display: none !important;
+}
+
+/* The big light box that wraps the hidden input + visible button
+   (GF's own .ginput_container_fileupload element — no extra wrapper needed). */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .ginput_container_fileupload {
+	position: relative;
+	display: flex !important;
+	align-items: center;
+	/* flex-start, not flex-end: the form is dir="rtl", so main-axis start
+	   is the right edge — this is what puts the button on the right. */
+	justify-content: flex-start;
+	width: 100% !important;
+	min-height: 54px;
+	background: #fcfcfe !important;
+	border: 1.5px solid #e4e3ee !important;
+	border-radius: 10px !important;
+	padding: 8px 10px !important;
+	box-sizing: border-box !important;
+}
+
+/* Visually hidden but still focusable/keyboard- and screen-reader-accessible. */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input[type="file"] {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .wida-file-btn {
+	display: inline-flex !important;
+	align-items: center;
+	gap: 8px;
+	background: #f3f1fb !important;
+	color: #6e4fdc !important;
+	border: 1px solid #ddd4fb !important;
+	border-radius: 8px !important;
+	padding: 9px 16px !important;
+	font-family: inherit !important;
+	font-size: 0.85rem !important;
+	font-weight: 600 !important;
+	letter-spacing: normal !important;
+	cursor: pointer !important;
+	white-space: nowrap;
+	max-width: 100%;
+	transition: background 0.2s ease !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .wida-file-btn:hover {
+	background: #e8e3fa !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .wida-file-btn__icon {
+	flex-shrink: 0;
+	width: 16px;
+	height: 16px;
+	color: #6e4fdc;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .wida-file-btn__text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Visible focus ring on the label when the hidden input is tabbed to,
+   since the input itself is visually hidden. */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 input[type="file"]:focus-visible + .wida-file-btn,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .ginput_container_fileupload:has(input[type="file"]:focus-visible) .wida-file-btn {
+	outline: 2px solid #9168ea;
+	outline-offset: 2px;
+}
+
+/* ── Validation ── */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield_error .gfield_label {
+	color: #e5484d !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield_error input,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield_error textarea,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield_error select {
+	border-color: #e5484d !important;
+}
+
+/* forms.less gives .gfield_validation_message a pink background (#f8d7da)
+   unconditionally, and it was being forced visible even empty (no error) —
+   that's the blank pink bar under the file upload field. Only show it (with
+   a plain text style, no background box) when the field actually has an
+   error; hide it entirely when empty. */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .validation_message,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield_validation_message {
+	background: transparent !important;
+	border: none !important;
+	padding: 0 !important;
+	color: #e5484d !important;
+	font-size: 0.8rem !important;
+	margin-top: 6px !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .validation_message:empty,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield_validation_message:empty {
+	display: none !important;
+	margin-top: 0 !important;
+}
+
+/* ── Footer / Submit button ── */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer {
+	grid-column: 1 / -1;
+	display: flex !important;
+	align-items: center;
+	justify-content: space-between !important;
+	margin: 28px 0 0 !important;
+	padding: 0 !important;
+}
+
+/* Hide GF's own legend markup (inconsistent across form configs) and
+   show a static "required fields" hint in its place instead. */
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_required_legend {
+	display: none !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer::before {
+	content: "* الحقول المطلوبة";
+	order: 2;
+	color: #8a87a0 !important;
+	font-size: 0.85rem !important;
+}
+
+/* The live form renders via Gravity Forms' "Orbital" theme framework
+   (gform-theme--orbital), which ships its own button CSS with a flex
+   layout of its own — that's what was winning over the class-based rule
+   below and stacking the text above the icon. #gform_submit_button_1 is
+   the button's real id, so an ID selector reliably outranks it. */
+body:is(.page-contact-us, .page-id-602) #gform_submit_button_1,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer .gform_button,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer input[type="submit"] {
+	background: #6e4fdc !important;
+	background-image: none !important;
+	color: #ffffff !important;
+	border: none !important;
+	border-radius: 10px !important;
+	padding: 17px 48px !important;
+	min-width: 220px !important;
+	justify-content: center !important;
+	/* Label text itself is replaced with "إرسال الطلب" via JS
+	   (wida_contact_form_field_validation in functions.php) — more
+	   reliable than hiding the GF admin label with font-size:0 and faking
+	   it with ::before, which the Orbital theme's own styles kept fighting. */
+	font-size: 0.92rem !important;
+	font-weight: 700 !important;
+	font-family: inherit !important;
+	letter-spacing: normal !important;
+	cursor: pointer !important;
+	width: auto !important;
+	box-sizing: border-box !important;
+	display: inline-flex !important;
+	flex-direction: row !important;
+	flex-wrap: nowrap !important;
+	white-space: nowrap !important;
+	align-items: center !important;
+	gap: 10px !important;
+	transition: background 0.25s ease, transform 0.15s ease !important;
+}
+
+/* Kill the old decorative SVG ::before background from forms.less's
+   .gform_button rule (legacy theme CSS, still loaded alongside Orbital). */
+body:is(.page-contact-us, .page-id-602) #gform_submit_button_1::before,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer .gform_button::before,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer input[type="submit"]::before {
+	content: none !important;
+	background-image: none !important;
+}
+
+/* Simple arrow icon after the button label (replaces the decorative SVG from forms.less) */
+body:is(.page-contact-us, .page-id-602) #gform_submit_button_1::after,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer .gform_button::after,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer input[type="submit"]::after {
+	content: "" !important;
+	order: 2 !important;
+	width: 18px !important;
+	height: 18px !important;
+	position: static !important;
+	flex-shrink: 0 !important;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M19 12H5M5 12L11 6M5 12L11 18' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: contain !important;
+	opacity: 1 !important;
+	transform: none !important;
+	pointer-events: none !important;
+}
+
+body:is(.page-contact-us, .page-id-602) #gform_submit_button_1:hover,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer .gform_button:hover,
+body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer input[type="submit"]:hover {
+	background: #5b3fc4 !important;
+	transform: translateY(-1px) !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767.98px) {
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 {
+		padding: 28px 20px;
+		border-radius: 16px;
+	}
+
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 ul.gform_fields,
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_fields {
+		grid-template-columns: 1fr !important;
+	}
+
+	/* Collapse the explicit 2-column placement back to natural single-column flow */
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_11,
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_5,
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_2,
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_6,
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_13,
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 #field_1_7,
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gfield--type-fileupload {
+		grid-column: 1 !important;
+		grid-row: auto !important;
+	}
+
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer {
+		flex-direction: column-reverse;
+		align-items: stretch;
+		gap: 14px;
+	}
+
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer .gform_button,
+	body:is(.page-contact-us, .page-id-602) #gform_wrapper_1 .gform_footer input[type="submit"] {
+		width: 100% !important;
+		justify-content: center;
+	}
+}

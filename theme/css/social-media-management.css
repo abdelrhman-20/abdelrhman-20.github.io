@@ -1,0 +1,79 @@
+/*
+ * Social Media Management Page Styles
+ * Page-specific CSS only — no global Header/Footer modifications.
+ */
+
+/* ============================================================
+   PAGE WRAPPER / DESIGN TOKENS
+   ============================================================ */
+
+.smm-page {
+	--smm-bg: #07030f;
+	--smm-bg-2: #0e071a;
+	--smm-purple: #6E4FDC;
+	--smm-purple-light: #9168EA;
+	--smm-pink: #DC8DD9;
+	--smm-text: #ffffff;
+	--smm-text-muted: rgba(255, 255, 255, 0.78);
+	--smm-overline: #DC8DD9;
+	--smm-btn-primary-bg: #161023;
+	--smm-btn-primary-border: rgba(145, 104, 234, 0.55);
+	--smm-btn-secondary-bg: rgba(220, 141, 217, 0.18);
+	--smm-btn-secondary-border: rgba(220, 141, 217, 0.45);
+	--smm-glow: rgba(110, 79, 220, 0.35);
+}
+
+/* ============================================================
+   HEADER — page-specific overrides only
+   (existing header.php and header.less are NOT modified)
+   ============================================================ */
+
+.smm-page header {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: transparent !important;
+	backdrop-filter: none !important;
+	-webkit-backdrop-filter: none !important;
+	border-bottom: none;
+	z-index: 100;
+}
+
+.smm-page header .container {
+	padding-top: 1.6rem;
+	padding-bottom: 1.6rem;
+}
+
+.smm-page .header__menu > .menu-item > a,
+.smm-page .header__menu > .menu-item > .sub-menu .menu-item a,
+.smm-page .language-switcher__trigger,
+.smm-page .header__cta {
+	color: #fff !important;
+}
+
+.smm-page .header__menu > .menu-item > a:hover {
+	color: var(--smm-pink) !important;
+}
+
+.smm-page .header__menu > .menu-item:not(:last-child)::after {
+	background-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.smm-page .language-switcher__trigger {
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.smm-page .hamburger-inner,
+.smm-page .hamburger-inner::before,
+.smm-page .hamburger-inner::after {
+	background-color: #fff !important;
+}
+
+@media (max-width: 767.98px) {
+	.smm-page header {
+		position: relative;
+		background: var(--smm-bg) !important;
+	}
+}
