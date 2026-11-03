@@ -43,9 +43,9 @@
         height: 44px;
         padding: 0 14px;
         border-radius: 12px;
-        border: 1.5px solid rgba(255,255,255,.25);
-        background: rgba(255,255,255,.08);
-        color: #fff;                           /* ← أبيض دايمًا */
+        border: 1.5px solid rgba(110,79,220,.45);
+        background: rgba(145,104,234,.14);
+        color: #4b2fb0;                        /* بنفسجي غامق عشان يبان على الخلفية البيضا */
         font-size: .95rem;
         font-weight: 500;
         cursor: pointer;
@@ -60,6 +60,7 @@
 .pa-btn.is-active {
         background: #9168EA;
         border-color: #9168EA;
+        color: #fff;
         font-weight: 700;
         cursor: default;
         box-shadow: 0 4px 20px rgba(145,104,234,.55);
@@ -71,7 +72,7 @@
 
 /* ── Dots ────────────────────────────────────────────────────── */
 .pa-dots {
-        color: rgba(255,255,255,.4);
+        color: rgba(75,47,176,.6);
         padding: 0 4px;
         font-size: .95rem;
         line-height: 44px;
