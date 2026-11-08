@@ -121,7 +121,7 @@ body:is(.page-contact-us, .page-id-602) .theme--dark pre {
 /* ══════════════════ Page max-width ══════════════════ */
 /* .container (shared by the Hero and the article/form) is fluid with no cap
    site-wide — capped at 1400px for this page only, centered. */
-body:is(.page-contact-us, .page-id-602) .container {
+body:is(.page-contact-us, .page-id-602) main .container {
 	max-width: 1100px !important;
 	margin-left: auto !important;
 	margin-right: auto !important;

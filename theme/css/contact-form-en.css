@@ -101,7 +101,7 @@ body.page-id-1158 .theme--dark pre {
 }
 
 /* ══════════════════ Page max-width ══════════════════ */
-body.page-id-1158 .container {
+body.page-id-1158 main .container {
 	max-width: 1100px !important;
 	margin-left: auto !important;
 	margin-right: auto !important;
